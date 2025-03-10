@@ -82,4 +82,27 @@ export class Empresa {
     getNomeFantasiaLowerCase() {
         return this.nomeFantasia.toLowerCase();
     }
+
+    addCliente(cliente) {
+        this.clientes.add(cliente);
+    }
+
+    addTelefone(telefone) {
+        this.telefones.add(telefone);
+    }
+
+    detalhe() {
+        let output = `Razão Social: ${this.razaoSocial} Nome fantasia: ${this.nomeFantasia}\n`;
+        output += "-----------------\n";
+        
+        this.clientes.forEach(cliente => {
+            output += `Nome: ${cliente.nome}\n`;
+            output += `Estado: ${cliente.endereco.estado} cidade: ${cliente.endereco.cidade} rua: ${cliente.endereco.rua} numero: ${cliente.endereco.numero}\n`;
+            cliente.telefones.forEach(telefone => {
+                output += `ddd: ${telefone.ddd} numero: ${telefone.numero}\n`;
+            });
+            output += "\n";
+        });
+        return output;
+    }
 }
