@@ -1,9 +1,9 @@
-class Cliente {
+export class Cliente {
     #cpf
     constructor(nome, cpf, endereco) {
         this.nome = nome;
         this.endereco = endereco;
-        this.telefone = new Set();
+        this.telefones = new Set();
         this.#cpf = cpf;
     }
     
@@ -20,7 +20,7 @@ class Cliente {
     }
 }
 
-class Telefone {
+export class Telefone {
     constructor(ddd, numero) {
         this.ddd = ddd;
         this.numero = numero;
@@ -35,7 +35,7 @@ class Telefone {
     }
 }
 
-class Endereco {
+export class Endereco {
     constructor(estado, cidade, rua, numero) {
         this.estado = estado;
         this.cidade = cidade;
@@ -52,7 +52,7 @@ class Endereco {
     }
 }
 
-class Empresa {
+export class Empresa {
     #cnpj
     constructor(razaoSocial, nomeFantasia, cnpj, endereco) {
         this.endereco = endereco;
